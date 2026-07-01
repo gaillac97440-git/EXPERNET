@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Indique que c'est du HTML5 -->
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Permet d'afficher les accents -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Indispensable pour le responsive sur mobile -->
+
+  <title>Post-Mortem - Crash BDD</title>
+</head>
+
+<body>
+
+  <!-- EN-TETE : logo, titre, date, intervenant -->
+  <header>
+    <img src="C:\Users\stagiaire\Downloads\logo entreprise pref.webp" alt="Logo entreprise">
+    <h1>Post-Mortem : Crash Serveur Base de Données</h1>
+    <p>Date : 15 juin 2026 à 03h14 | Intervenant : Romain GAILLAC</p>
+  </header>
+
+  <!-- NAVIGATION : liens vers les sections de la page -->
+  <nav>
+    <a href="#resume">Résumé</a>
+    <a href="#chronologie">Chronologie</a>
+    <a href="#solution">Solution</a>
+  </nav>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main>
+
+    <!-- Résumé de l'incident -->
+    <section id="resume">
+      <h2>Résumé de l'incident</h2>
+      <p>Le serveur de base de données <strong>db-prod-01</strong> a crashé à 03h14.</p>
+      <p>Cause : saturation de la mémoire vive (RAM pleine à 98%).</p>
+      <p>Durée de l'incident : <strong>47 minutes</strong>. Aucune perte de données.</p>
+    </section>
+
+    <!-- Chronologie des événements -->
+    <article id="chronologie">
+      <h2>Chronologie des événements</h2>
+
+      <p><strong>03h14 — Alerte reçue:</strong> Zabbix envoie une alerte : RAM à 98%, swap saturé.</p>
+
+      <p><strong>03h21 — Connexion au serveur:</strong> Connexion SSH depuis le smartphone. Le processus MySQL consomme 14 Go sur 16 Go.</p>
+
+      <p><strong>03h38 — Redémarrage du service:</strong> Exécution de <code>systemctl restart mysql</code>. La RAM revient à 2 Go.</p>
+
+      <p><strong>04h01 — Retour à la normale:</strong> Service rétabli. Grafana confirme la stabilisation.</p>
+    </article>
+
+    <!-- Métriques techniques au moment du crash -->
+    <aside>
+      <h2>Métriques au moment du crash</h2>
+        <li>CPU : 94%</li>
+        <li>RAM : 15,8 Go / 16 Go utilisés</li>
+        <li>Swap : 2 Go / 2 Go (saturé)</li>
+        <li>Load average : 18.4</li>
+    </aside>
+
+    <!-- Solution appliquée -->
+    <section id="solution">
+      <h2>Solution appliquée</h2>
+      <p>Redémarrage du service MySQL après sauvegarde des logs.</p>
+      <p>Réduction de la taille du buffer MySQL dans la configuration.</p>
+      <p>Ajout d'une alerte Zabbix dès 80% de RAM pour anticiper.</p>
+    </section>
+
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer>
+    <p>Documentation : <a href="#">Wiki Infrastructure</a> | <a href="#">Runbook BDD</a></p>
+    <p>Support N3 : support-n3@entreprise.local</p>
+  </footer>
+
+</body>
+</html>

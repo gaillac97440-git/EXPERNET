@@ -1,0 +1,56 @@
+header (titre + indicateurs)
+main
+ ├── aside (formulaire de filtres, à gauche)
+ └── section (tableau d'événements, au centre)
+footer (statut de conformité)
+
+_______________________________________________
+
+<!DOCTYPE html>
+<!-- Indique que c'est du HTML5 -->
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Permet d'afficher les accents -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Indispensable pour le responsive sur mobile -->
+
+  <title>TEST site web</title>
+</head>
+
+<body>
+    <!-- EN-TETE : logo, titre, date, intervenant -->
+    <header>
+      <img src="C:\Users\stagiaire\Downloads\page-en-construction.png" alt="Logo entreprise">
+      <h1>Test site web</h1>
+    </header>
+    
+    <!-- CONTENU PRINCIPAL -->
+    <main>
+        <!-- Métriques techniques au moment du crash -->
+        <aside>
+            <form action="/action.php" method="post">
+                <select name="criticity level">
+                    <option selected="selected" value="lower">lower</option>
+                    <option value="middle">middle</option>
+                </select><br /> 
+                <input checked="checked" name="newsletter" type="radio" value="daily" /> Daily <input name="newsletter" type="radio" value="weekly" /> Weekly<br />
+                <textarea cols="20" name="comments" rows="5">Comment</textarea><br />
+                <label><input name="terms" type="checkbox" value="tandc" />Accept terms</label> <br />
+                <input type="submit" value="Submit" />
+            </form>
+    </aside>
+
+    <!-- Solution appliquée -->
+    <section id="solution">
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer>
+  </footer>
+
+</body>
+</html>
