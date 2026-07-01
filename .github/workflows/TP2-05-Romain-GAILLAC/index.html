@@ -7,37 +7,42 @@
   <!-- Permet d'afficher les accents -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-  <title>TEST site web</title>
+
+  <title>SOC Security Events</title>
 </head>
 
 <body>
     <header>
-      <img src="C:\Users\stagiaire\Downloads\page-en-construction.png" alt="test">
-      <h1>Test site web</h1>
+      <img src="images/page-en-construction.png" alt="Logo SOC">
+      <h1>SOC Security Events</h1>
     </header>
-    
+
     <!-- CONTENU PRINCIPAL -->
     <main>
         <aside>
             <form action="/action.php" method="post">
-                <select name="criticity level">
-                    <option selected="selected" value="lower">lower</option>
-                    <option value="middle">middle</option>
-                </select><br /> 
-                <input checked="checked" name="newsletter" type="radio" value="daily" /> Daily <input name="newsletter" type="radio" value="weekly" /> Weekly<br />
-                <textarea cols="20" name="comments" rows="5">Comment</textarea><br />
-                <label><input name="terms" type="checkbox" value="tandc" />Accept terms</label> <br />
-                <input type="submit" value="Submit" />
-            </form>
-    </aside>
-    <section id="solution">
-    </section>
-  </main>
+                <label for="ip">Adresse IP source :</label><br>
+                <input type="text" id="ip" name="ip" placeholder="Ex: 185.220.101.5"><br><br>
 
-  <!-- PIED DE PAGE -->
-  <footer>
-  </footer>
+                <label for="criticity">Niveau de criticité :</label><br>
+                <select id="criticity" name="criticity">
+                    <option value="critique">Critique</option>
+                    <option value="warning">Warning</option>
+                    <option value="info" selected="selected">Info</option>
+                </select><br><br>
+
+                <input type="submit" value="Appliquer les filtres">
+            </form>
+        </aside>
+
+        <section id="solution">
+        </section>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer>
+        <p>Conforme RGPD - SOC v1.2</p>
+    </footer>
 
 </body>
 </html>
