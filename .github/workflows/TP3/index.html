@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portail Captif - Infratech-Guest</title>
+  <title>Portail Infratech-Guest</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <div class="conteneur-portail">
 
+    <!-- Colonne gauche : illustration corporate / consignes sécurité physique -->
     <div class="colonne-image">
       <h2>Consignes de sécurité Data Center</h2>
       <p>Accès badge obligatoire. Interdiction de photographier les baies.</p>
     </div>
 
-    <!-- Colonne droite : formulaire -->
+    <!-- Colonne droite : formulaire d'authentification -->
     <div class="colonne-formulaire">
-      <h1 class="titre-portail">Bienvenue sur Infratech-Guest</h1>
+      <h1 class="titre-portail">Infratech-Guest</h1>
+      <p class="sous-titre">Réseau Wi-Fi invités — Authentification requise</p>
 
       <form action="/connexion.php" method="post">
         <label for="identifiant">Identifiant :</label><br>
@@ -25,6 +27,11 @@
 
         <label for="mdp">Mot de passe / Code temporaire :</label><br>
         <input type="password" id="mdp" name="mdp"><br><br>
+
+        <label class="charte">
+          <input type="checkbox" id="charte" name="charte" required>
+          J'accepte la charte informatique
+        </label><br><br>
 
         <input type="submit" value="Se connecter">
       </form>

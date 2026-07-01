@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #e5e5e5;
+}
+
+.conteneur-portail {
+  display: flex;
+  min-height: 100vh;
+}
+
+.colonne-image {
+  flex: 1;
+  background-color: #0f172a;
+  color: white;
+  padding: 40px;
+}
+
+.colonne-image h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+.colonne-image p {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.colonne-formulaire {
+  flex: 1;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.titre-portail {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: bold;
+  color: #1e293b;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.sous-titre {
+  color: #555555;
+  font-size: 0.95rem;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+label {
+  font-size: 15px;
+  color: #333333;
+  font-weight: 600;
+}
+
+.charte {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+}
+
+input[type="submit"] {
+  background-color: #1e293b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+
+  .colonne-image {
+    display: none;
+  }
+
+  .colonne-formulaire {
+    width: 100%;
+  }
+
+}
